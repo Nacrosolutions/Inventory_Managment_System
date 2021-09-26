@@ -1,0 +1,55 @@
+
+     
+    <nav class="navbar navbar-inverse" style="color: white;  background: rgb(53, 52, 52);">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a routerLink="/" class="navbar-brand">Nacrosolutions</a>
+            </div>
+        
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/about" >Home</a></li>
+                <li routerLinkActive="active">
+                    <a routerLink="/emp" >Insert Product</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a routerLink="/stock-details">Stock Available</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a routerLink="/register">Register Customer</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a routerLink="/customer-list">Get Customer List</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a routerLink="/order-details">Order Detail</a>
+                </li>
+                
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li *ngIf="isAuthenticated">
+                        <a href="#" style="cursor: pointer;" (click)="onlogout()">Logout</a>
+                    
+                      </li>
+                <li>
+                    <a href="#" style="cursor: pointer;">Inventory Ratio</a>
+                
+                </li>
+                
+                <!-- <li class="dropdown" appDropdown *ngIf="isAuthenticated">
+                    <a style="cursor: pointer;" class="dropdown-toggle" role="button"
+                    >Manage <span class="caret"></span
+                    ></a>
+                    <ul class="dropdown-menu">
+                    <li>
+                        <a style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+                    </li>
+                    <li>
+                        <a style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+                    </li>
+                    </ul>
+                </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>

@@ -1,0 +1,154 @@
+<!-- 
+<div class="container " style=" width: 50%; height: 50%; "  >
+  <img src="https://www.listingmirror.com/wp-content/uploads/2019/02/multichannel-ecommerce-inventory-management.png" style="width:50%;
+  width:100%;
+  
+  
+  height: 100%;
+  position:absolute;
+  z-index:-10;
+  opacity: 100%;
+  ">
+</div>
+<div class="container " style=" width: 50%; height: 50%;" >
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-xd-offset-3"  style="margin-top: 20%;margin-left: 50%; width: 100%;" class="shadow p-3 mb-5 bg-white rounded" >
+    
+    <div class="alert alert-danger" *ngIf="error">
+      <p>{{ error }}</p>
+    </div>
+    <div *ngIf="isLoading" style="text-align: center;">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          ngModel
+          name="email"
+          required
+          email
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          ngModel
+          name="password"
+          required
+          minlength="6"
+        />
+      </div>
+      <div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!authForm.valid"
+        >
+          {{ isLoginMode ? 'Login' : 'Sign Up' }}
+        </button>
+        |
+        <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
+          Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+        </button>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+
+
+
+ -->
+ 
+<app-header></app-header>
+
+
+<body>
+  <div class="container" id="nab" >
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+         
+            <div class="account-wall">
+                <img class="profile-img" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-fill-circle-512.png"
+                    alt="">
+                    <div class="alert alert-danger" *ngIf="error">
+                      <p>{{ error }}</p>
+                    </div>
+                    <div *ngIf="isLoading" style="text-align: center;">
+                      <app-loading-spinner></app-loading-spinner>
+                    </div>
+               
+                  <form class="form-signin" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+                    <div class="form-group">
+                      <label for="email">E-Mail</label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        ngModel
+                        name="email"
+                        required
+                        email
+                        #email="ngModel" 
+                        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        placeholder="Email"  autofocus
+                      >
+                      <div class="alert alert-danger" *ngIf="email.touched &&!email.valid">Email is required</div>
+                      <div *ngIf="email.errors?.pattern">
+                        Email Should be like t@t.com
+                   </div> 
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        ngModel
+                        name="password"
+                        required
+                        minlength="6"
+                 
+                        #password="ngModel"
+                      >
+                      <div class="alert alert-danger" *ngIf="password.touched &&!password.valid">Password is required</div>
+                      <div *ngIf="password.errors?.minlength">
+                          More than 6 is required
+                  
+                   </div> 
+                    </div>
+                    <div>
+                      <button
+                      class="btn btn-lg btn-primary btn-block"
+                        type="submit"
+                        [disabled]="!authForm.valid"
+                      >
+                        {{ isLoginMode ? 'Login' : 'Sign Up' }}
+                      </button>
+                      
+                      <button class="btn btn-lg btn-primary btn-block" (click)="onSwitchMode()" type="button">
+                        Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+                      </button>
+                    </div>
+              
+               
+                <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                </label>
+                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                </form>
+            </div>
+         
+        </div>
+    </div>
+</div>
+
+</body>

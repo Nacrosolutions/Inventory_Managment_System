@@ -1,0 +1,26 @@
+
+<app-head></app-head>
+<div style="width: 100%; height: 100vh; margin-top: -20px;" class="imag">
+<div   class="p" style="width: 400px;  height:300px;">
+    <div class="form-group "   style="border-right: 1px soild red;">
+        <div class="pp">
+            <font size="4">Update Customer</font>
+        </div>
+
+<div [hidden]="submitted" style="width: 390px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="user.name" name="name">
+      </div>
+  
+      <div class="form-group">
+        <label for="email">email</label>
+        <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+      </div>
+ 
+      <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+  </div>
+  </div>
+  </div>

@@ -1,0 +1,63 @@
+       
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome to the Inventory Section</h2>
+        <p>
+          Choose your Inventory
+        </p>
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="row">
+                <div class="col-xd-12 form-group">
+                    <label for="name">
+                     Inventory Name:</label>
+                    <input type="text" class="form-control" id="inventoryname"
+                     name="inventoryname"
+                     ngModel
+                     required
+                    maxlength="50"
+                    #inventorytype="ngModel">
+                </div>
+              
+            </div>
+           
+            <div class="form-group">
+          <label for="company">
+                       Type of Inventory:</label>
+               <div class="col-xd-12 form-group">
+                  <select id="inventorytype" class="form-control"
+                  ngModel
+                  name="inventorytype"
+                  #inventorytype="ngModel">
+                    <option>Hardware Inventory</option>
+                    <option>Software Inventory </option>
+                    <option>Food Inventory</option>
+                  </select> 
+                </div>
+                <br>
+              </div>
+                        
+               <div class="row">
+                <div class="col-sm-12 form-group">
+                    <button type="submit" class="btn btn-lg btn-success btn-block" id="btnContactUs ">
+                     
+                        Role it!</button>
+                    
+                </div>
+            </div>
+
+        </form>
+
+     
+     
+    </div>
+</div>
+<hr>
+<div class="row" *ngIf="submitted">
+  <div class="col-xs-12">
+    <h3>Your Data</h3>
+    <p>Username: {{ user.inventoryname }}</p>
+    <p>Mail: {{ user.inventorytype }}</p>
+  
+  </div>
+</div>
+<app-inventory [inventoryname]="user.inventoryname"></app-inventory>

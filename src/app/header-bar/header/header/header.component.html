@@ -1,0 +1,244 @@
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<!------ Include the above in your HEAD tag ---------->
+<!-- 
+<div class="container" style="width: 100%;">
+    <div class="row">
+        <div class="wrapper">
+            <div class="side-bar">
+                <ul>
+                    <li class="menu-head">
+                        CLASH OF CLANS <a class="push_menu"><span class="glyphicon glyphicon-align-justify pull-right"></span></a>
+                    </li>
+                    <div class="menu">
+                        <li>
+                            <a href="#">Dashboard <span class="glyphicon glyphicon-dashboard pull-right"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="active">Love snippet<span class="glyphicon glyphicon-heart pull-right"></span></a>
+                        </li>
+                        <li>
+                            <a href="#">Like it? <span class="glyphicon glyphicon-star pull-right"></span></a>
+                        </li>
+                        <li>
+                            <a href="#">Settings <span class="glyphicon glyphicon-cog pull-right"></span></a>
+                        </li>
+                    </div>
+                    
+                </ul>
+            </div>   
+            <div class="content" style="width:100%; height: 100vh;">
+                <div class="col-md-12">
+                    <div class="panel panel-default " style="height: 100%;">
+                <h2>DashBoard</h2>
+                <div>
+                <nav class="navbar navbar-inverse" style="color: white;  background: rgb(53, 52, 52);">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a routerLink="/" class="navbar-brand">Nacrosolutions</a>
+                        </div>
+                    
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                            <li routerLinkActive="active"><a routerLink="/any" >Home</a></li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/any2" >Insert Product</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/shopping-list">Stock Available</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/registration">Register Customer</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/registration">Get Customer List</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/registration">Order Detail</a>
+                            </li>
+                            
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#" style="cursor: pointer;">Inventory Ratio</a>
+                            
+                            </li>
+                       <li class="dropdown" appDropdown *ngIf="isAuthenticated">
+                                <a style="cursor: pointer;" class="dropdown-toggle" role="button"
+                                >Manage <span class="caret"></span
+                                ></a>
+                                <ul class="dropdown-menu">
+                                <li>
+                                    <a style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+                                </li>
+                                <li>
+                                    <a style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+                                </li>
+                                </ul>
+                            </li> -->
+                            <!-- </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+                <br>
+
+
+                <div   class="p" style="width: 300px;  height:350px; float: left;">
+<form  class="form-signin" style="width: 100%;border-right: 1px soild red;"
+(ngSubmit)="onSubmit()" #userForm="ngForm">
+                    
+                        <div class="form-group "   style="border-right: 1px soild red;">
+                            <div class="pp">
+                                <font size="4">Register Customer</font>
+                            </div>
+                        <label for="name">Name</label>
+    <input type="text" [(ngModel)]="user.name"
+           class="form-control"
+           id="name"
+           name="name"
+           minlength="5"
+           placeholder="Enter your name"
+           required #name="ngModel">
+                    
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" [(ngModel)]="user.email"
+                                   class="form-control"
+                                   id="email"
+                                   name="email"
+                                   pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                   placeholder="Enter your email address"
+                                   required #email="ngModel">
+                        
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNo">Phone no</label>
+                            <input
+                                type="number"
+                                id="phoneNo"
+                                class="form-control"
+                                ngModel
+                                name="phoneNo"
+                                required
+                                minlength="6"
+                        
+                                #phoneNo="ngModel"
+                            >
+                            </div>
+                            <div><button class="btn btn-success">
+                            Submit
+                                </button>
+
+                            </div>
+                    
+                
+        
+                    </form>
+        
+            </div>
+            <div   class="p" style="width: 600px;   float:right; margin-right: 30px;
+            ">
+            <app-inventory-table></app-inventory-table></div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  -->
+<!-- asc----------------------------------------------------------------------------
+------------------------------------------------------------------------ -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div style="width: 100%; height: 100vh;" class="back">
+<div class="container " style="width: 100%;">
+    <div class="row">
+        <div class="wrapper">
+            <div class="row">
+                <div class="wrapper">
+                    <div class="side-bar">
+                    <app-sidebar></app-sidebar> 
+                    </div>
+
+          
+                 
+                <nav class="navbar navbar-inverse" style="color: white;  background: rgb(53, 52, 52);">
+                    <div class="container-fluid ">
+                        <div class="navbar-header">
+                            <a routerLink="/" class="navbar-brand">Nacrosolutions</a>
+                        </div>
+                    
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                            <li routerLinkActive="active"><a routerLink="/about" >Home</a></li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/emp" >Insert Product</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/stock-details">Stock Available</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/register">Register Customer</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/customer-list">Get Customer List</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/order-details">Order Detail</a>
+                            </li>
+                            
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#" style="cursor: pointer;">Inventory Ratio</a>
+                            
+                            </li>
+                            <li *ngIf="isAuthenticated">
+                                <a href="#" style="cursor: pointer;" (click)="onlogout()">Logout</a>
+                            
+                              </li>
+                            <!-- <li class="dropdown" appDropdown *ngIf="isAuthenticated">
+                                <a style="cursor: pointer;" class="dropdown-toggle" role="button"
+                                >Manage <span class="caret"></span
+                                ></a>
+                                <ul class="dropdown-menu">
+                                <li>
+                                    <a style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+                                </li>
+                                <li>
+                                    <a style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+                                </li>
+                                </ul>
+                            </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+         
+                </div>
+                
+                </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<div class="col-md-6 intro-img order-md-last order-first " style="float: right;">
+    <img src="../../../../assets/intro-img.svg" alt="" class="img-responsive ">
+  </div>
+</div>
+
+
+
+
+
+

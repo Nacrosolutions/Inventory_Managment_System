@@ -1,0 +1,275 @@
+<app-sidebar></app-sidebar><div id="nabh" class="col-xd-12">
+<app-head></app-head>
+
+
+
+
+<div class="p" style="width: 600px;  height:460px; margin-top: 70px; margin-right:490px;">
+	<div class="panel panel-info">
+		<!-- <div class="panel-heading">
+			<div class="panel-title">
+				<div class="row">
+					<div class="col-xs-6">
+						<a href="product-list">
+						<h5><span class="glyphicon glyphicon-shopping-cart"></span> Product Cart</h5>
+						</a>
+					</div>
+					<div class="col-xs-6">
+						<a href="emp ">
+						<button type="button" class="btn btn-primary btn-sm btn-block">
+						
+							<span class="glyphicon glyphicon-share-alt"></span> Continue adding
+						</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<button class="btn btn-danger" (click)="forms(userForm)" style="float: right;">Reset</button>
+	<form  class="form-signin" style="width: 100%;border-right: 1px soild red;"
+	(ngSubmit)="onSubmit()" #userForm="ngForm">
+						   
+							   <div class="form-group "   style="border-right: 1px soild red;">
+								
+								  
+								   <div class="col-xd-12">
+									<a href="#" style="margin-right: 20px;">
+										<span class="glyphicon glyphicon-user"></span>
+									  </a>
+
+							   <label for="name"><strong>Product name</strong></label>
+		   <!-- <input type="text" [(ngModel)]="product.name"
+				  class="form-control"
+				  id="name"
+				  name="name"
+				  minlength="5"
+				  placeholder="Enter your product  name"
+				  required #name="ngModel"> -->
+				  <div class="col-xd-12 form-group">
+					<select id="name" class="form-control"  name="drinks" ngModel [(ngModel)]="product.name" #name="ngModel">
+					  <option value="Pepsi">Pepsi</option>
+					  <option value="CocaCola">CocaCola</option>
+					  <option value="Moutain Dew">Moutain Dew</option>
+					</select> 
+				  </div>
+				  </div>
+						   
+							   </div>
+							   <div class="form-group">
+							 <span class="glyphicon glyphicon-leaf" style="margin-right: 20px;"></span>
+								   <label for="description">description</label>
+								   <br>
+								   <!-- <input type="text" [(ngModel)]="product.description"
+										  class="form-control"
+										  id="description"
+										  name="description"
+										  minlength="6"
+								
+										  placeholder="Enter your product  description "
+										  required #description="ngModel">
+										  <div [hidden]="description.valid || description.pristine"
+										   style="background-color: mistyrose;">
+									   Minimum six letter's required -->
+									   <textarea #description="ngModel"  id="description"
+									   name="description"  minlength="10" [(ngModel)]="product.description" required  style="height: 80px;width: 100%;"></textarea>
+									 
+									   <div [hidden]="description.valid || description.pristine"
+									   style="background-color: mistyrose;">
+								   Minimum ten letter's required
+									</div>
+							   
+							   </div>
+							  
+								<div class="form-group">
+									<label for="stockDetail">Your Stock</label>
+									<input
+										type="number"
+										class="form-control"
+										ngModel
+										[min]="10"
+										name="stock"
+										required
+										[(ngModel)]="product.stock"
+										[(ngModel)]="value2" value="{{value2-value}}"
+										
+										#stocks="ngModel"
+									>
+									<div *ngIf="value2<=0 ||value<=4  ||value2<=value"   style="height: 40px; width: 100%; background-color: mistyrose;" 
+									
+									><strong>Sorry the Stock can't be less than  zero or empty</strong></div>
+									</div>
+								
+							   <div class="form-group">
+								<label for="quantity">Quantity</label>
+								<input
+									type="number"
+									id="quantity"
+									class="form-control"
+									ngModel
+									[(ngModel)]="value"  value="{{value}}"
+									name="quantity"
+									required
+									minlength="6"
+									[min]="10"
+									[(ngModel)]="product.quantity"
+							
+									#quantity="ngModel" 
+								>
+					          <div *ngIf="value<=4 || value > value2 " style="height: 40px; width: 100%; background-color: mistyrose;"><strong>
+								  The quantity should be more than 4 and should be less than stock
+                                </strong>
+							  </div>
+								</div>
+								<!-- <div class="form-group">
+									<span class="glyphicon glyphicon-leaf" style="margin-right: 20px;"></span>
+										  <label for="stockss">description</label>
+										  <input type="text" [(ngModel)]="product.stockss"
+												 class="form-control"
+												 id="stockss"
+												 name="stockss"
+									   
+												 placeholder="Enter your product  description "
+												 required #stockss="ngModel">
+									  
+									  </div> -->
+							   
+							   <div class="form-group">
+								   <label for="price">Enter Price for individual quantity</label>
+								   <input
+									   type="number"
+									   id="price"
+									   class="form-control"
+									   ngModel
+									   name="price"
+									   required
+									   minlength="6"
+									   [(ngModel)]="value1"  value="{{value1}}"
+									   [(ngModel)]="product.price"
+									   #price="ngModel"
+								   >
+								   <div *ngIf="value1<=4 || value > value2 " style="height: 40px; width: 100%; background-color: mistyrose;"><strong>
+									The price should be more than 4 
+								  </strong>
+								</div>
+								   </div>
+								   <div class="form-group">
+	   
+									<!-- <label for="dateOfIssue">Date of Placement</label>
+									<input id="stockss" name="stockss"   [min]="minDate" [max]="maxDate" ngModel [(ngModel)]="product.stockss"
+									type="datetime-local" class="form-control" #stockss="ngModel"> -->
+							
+								
+									<label for="dateOfIssue">Date of Placement</label>
+									  <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" style="width: 92%;"
+									
+									  id="stockss" name="stockss" ngModel [(ngModel)]="product.stockss"
+									  class="form-control" #stockss="ngModel">
+							<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+							<mat-datepicker #picker></mat-datepicker>
+							<div [hidden]="stockss.valid "
+							class="alert alert-danger" style="background-color: mistyrose;">
+							Time field is wrong
+							</div>
+																</div>
+								   <div class="form-group">
+									<label for="stockDetail">Increment your Stock by any number such that it can't be zero</label>
+									<input
+										type="number"
+										id="stock"
+										class="form-control"
+										ngModel
+									
+										name="stock"
+										required
+						               max="40"
+										[(ngModel)]="value3"  value="{{value2-value}}"
+										[(ngModel)]="product.stock"
+										#stock="ngModel"
+									>
+									<div [hidden]="stock.valid || name.pristine"
+									class="alert alert-danger" style="background-color: mistyrose;">
+								stock is required
+							   </div>
+									</div>
+									<!-- <div class="form-group"> 
+
+								
+											  <input class="form-control" placeholder="yyyy-mm-dd"
+											  ngModel
+													name="stockss" 	id="stockss"
+													class="form-control"
+													[(ngModel)]="product.stockss"
+												
+													#stockss="ngModel"
+													>
+									
+											
+										
+
+
+
+
+									</div> -->
+								
+								   <div>
+
+								   								<!-- <button class="btn btn-success" [disabled]="!allow" (click)="calculate()">
+								   Submit
+								</button> -->
+
+
+			
+								
+									<p *ngIf="value < totalquantity && value3>value2&&value3!=value2&&value1>=4&&value>0;else noServer ">
+
+										<button class="btn btn-success" [disabled]="!userForm.valid " (click)="calculate()">
+											Submit
+										 </button>
+
+									
+
+
+
+									</p>
+									<ng-template #noServer>
+									  <p>
+                               <button class="btn btn-success" disabled (click)="calculate()">
+											Submit
+										 </button>
+										 
+										 | The quantity excced the inventory quantity or its empty
+										
+									  </p>
+									 
+									</ng-template>
+
+							
+   
+								   </div>
+								
+							
+			   
+						   </form>
+				
+						
+						   </div>
+						   
+						  
+
+
+ 
+					
+				   </div>
+				 
+				</div>
+				<!-- <div style="background-color: rgb(189, 173, 159);">
+			 
+				   <div style="float: right;margin-top: 220px; margin-right:80px; ">
+					<div class="panel panel-default" style="width: 180px;  background-color: thistle; float: right; ">
+						<div class="panel-heading" style="height: 74px; margin-top: -27px; background-color: rgb(236, 232, 236); border: 2px solid rgb(201, 201, 214);"><strong >The stock is :{{value3}}</strong></div>
+					
+					  </div>
+				   </div>
+
+				   </div> -->
+

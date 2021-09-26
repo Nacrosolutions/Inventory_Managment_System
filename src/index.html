@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Nacrosolutions</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/v.png">
+</head>
+<body class="mat-typography">
+  
+  <app-root></app-root>
+  <script>
+
+    let searchFun=()=>{
+      let filter=document.getElementById('myInput');
+    
+      let myTable=document.getElementById('myTable');
+      let tr=myTable.getElementsByTagName('tr');
+      for(var i=1;i<tr.length;i++){
+        let td=tr[i].getElementsByTagName('td')[0];
+    
+        if(td)
+    {
+       let textvalue=td.textContent || td.innerHTML;
+       if(textvalue.toUpperCase().indexOf(filter)>-1){
+         tr[i].style.display="";
+       }
+       else{
+         tr[i].style.display="none";
+       }
+    }  }
+                    }
+                  </script>
+</body>
+</html>

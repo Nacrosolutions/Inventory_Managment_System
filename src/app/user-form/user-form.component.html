@@ -1,0 +1,42 @@
+<div class="card my-5" style="border: 2px solid mistyrose;">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="user.name"
+               class="form-control"
+               id="name"
+               name="name"
+               minlength="5"
+               placeholder="Enter your name"
+               required #name="ngModel">
+               <div  *ngIf="name.touched &&name.invalid"    class="alert alert-danger">
+                <div *ngIf="name.errors.required">UserName is required</div>
+                <div *ngIf="name.errors?.minlength">
+                  Name must be at least 5 characters long.
+             </div> 
+               
+                
+        
+            </div>
+            </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" [(ngModel)]="user.email"
+               class="form-control"
+               id="email"
+               name="email"
+               pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+               placeholder="Enter your email address"
+               required #email="ngModel">
+        <div class="alert alert-danger" *ngIf="email.touched &&!email.valid">Email is required</div>
+        <div *ngIf="email.errors?.pattern">
+          Email Should be like t@t.com
+     </div> 
+      
+      </div>
+      <button type="submit" [disabled]="!userForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

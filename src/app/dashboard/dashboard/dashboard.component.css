@@ -1,0 +1,7 @@
+.ppp{
+    height: 100vh;
+    background-image: url('../../../assets/intro-bg.jpg');
+    
+    background-size: cover;
+    margin-top: -20px;;
+}

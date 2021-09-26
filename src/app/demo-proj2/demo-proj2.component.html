@@ -1,0 +1,133 @@
+<app-sidebar></app-sidebar>
+<app-head></app-head>
+<div id="nab">
+<div class="p" style="width: 600px;  height:400px;">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<div class="row">
+					<div class="col-xs-6">
+						<h5><span class="glyphicon glyphicon-shopping-cart"></span> Product Cart</h5>
+					</div>
+					<div class="col-xs-6">
+						<a  routerLink="/demo">
+						<button type="button" class="btn btn-primary btn-sm btn-block">
+							<span class="glyphicon glyphicon-share-alt"></span> Continue adding
+						</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<form  class="form-signin" style="width: 100%;border-right: 1px soild red;"
+	(ngSubmit)="onSubmit()" #userForm="ngForm">
+						   
+							   <div class="form-group "   style="border-right: 1px soild red;">
+								   <div class="pp">
+									   <font size="4">Add to the product Cart</font>
+								   </div>
+								   <br>
+								   <div class="col-xd-12">
+									<a href="#" style="margin-right: 20px;">
+										<span class="glyphicon glyphicon-user"></span>
+									  </a>
+
+					
+									  <label for="name"><strong>Product name</strong></label>
+									  <!-- <input type="text" [(ngModel)]="product.name"
+											 class="form-control"
+											 id="name"
+											 name="name"
+											 minlength="5"
+											 placeholder="Enter your product  name"
+											 required #name="ngModel"> -->
+											 <div class="col-xd-12 form-group">
+											   <select id="name" class="form-control"  name="drinks" ngModel [(ngModel)]="product.name" #name="ngModel">
+												 <option value="Pepsi">Pepsi</option>
+												 <option value="CocaCola">CocaCola</option>
+												 <option value="Moutain Dew">Moutain Dew</option>
+											   </select> 
+											 </div>
+											 </div>
+						   
+							   </div>
+							   <div class="form-group">
+							 <span class="glyphicon glyphicon-leaf" style="margin-right: 20px;"></span>
+								   <label for="description">description</label>
+								   <input type="text" [(ngModel)]="product.description"
+										  class="form-control"
+										  id="description"
+										  name="description"
+								
+										  placeholder="Enter your product  description "
+										  required #description="ngModel">
+							   
+							   </div>
+							   <!-- <div class="form-group">
+								<label for="quantity">Quantity</label>
+								<input
+									type="number"
+									id="quantity"
+									class="form-control"
+									ngModel
+									[(ngModel)]="value"  value="{{value}}"
+									name="quantity"
+									required
+									minlength="6"
+									[(ngModel)]="product.quantity"
+							
+									#quantity="ngModel" 
+								>
+								</div>
+							   
+							   <div class="form-group">
+								   <label for="price">Enter Price for individual quantity</label>
+								   <input
+									   type="number"
+									   id="price"
+									   class="form-control"
+									   ngModel
+									   name="price"
+									   required
+									   minlength="6"
+									   [(ngModel)]="value1"  value="{{value1}}"
+									   [(ngModel)]="product.price"
+									   #price="ngModel"
+								   >
+								   </div> -->
+								   <div>
+									<button class="btn btn-success">
+								   Submit
+								</button>
+   
+								   </div>
+						   
+								 
+									
+							
+			   
+						   </form>
+					
+						   </div>
+						   
+						  
+
+<!-- <div class="panel panel-default" style="width: 180px;  background-color: thistle; float: left;">
+	<div class="panel-heading" style="height: 86px; margin-top: -22px; background-color: rgb(236, 232, 236);"><strong >The quantity is : {{value}}</strong></div>
+
+  </div> -->
+<!-- <div>
+	<button type="button" (click)="values">ClickHere</button>
+</div> -->
+  <!-- <div class="panel panel-default" style="width: 180px;  background-color: thistle; float: right;">
+	<div class="panel-heading" style="height: 86px; margin-top: -22px; background-color: rgb(236, 232, 236);"><strong >The prices is :{{value*value1}}</strong></div>
+
+  </div>
+  -->
+					
+				   </div>
+
+				</div>
+				  
+
